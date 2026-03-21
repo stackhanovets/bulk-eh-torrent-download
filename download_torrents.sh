@@ -2,7 +2,7 @@
 
 export qbtUrl=""
 qbtLogin=""
-qbtPassword="roroot"
+qbtPassword=""
 
 export BROWSER_DOWNLOAD_DIR=""
 export TORRENT_DOWNLOAD_DIR=""
