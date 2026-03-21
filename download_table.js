@@ -8,8 +8,9 @@ function sleep(millis)
 {
     var date = new Date();
     var curDate = null;
-    do { curDate = new Date(); }
-    while(curDate-date < millis);
+    while(curDate - date < millis) {
+      curDate = new Date();
+    }
 }
 
 // I have a URL 'https://example.org/aaa/bbb/ccc/'
@@ -326,10 +327,10 @@ const galleryDownloadTableRows = [];
 favoriteGalleryUrls.forEach (function(url) {
     galleryDownloadDto = getGalleryDownloadDto(url);
     if (galleryDownloadDto) {
+        sleep(SLEEP_SECONDS * 1000);
         downloadFileSync(galleryDownloadDto.url, galleryDownloadDto.torrentFile);
         const galleryDownloadString = galleryDownloadDto.toString();
         galleryDownloadTableRows.push(galleryDownloadString);
-        sleep(SLEEP_SECONDS * 1000);
     }
 })
 
